@@ -23,6 +23,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.JstlView;
 
 import it.uniroma3.authtest.service.FotografiaService;
+import it.uniroma3.authtest.services.AlbumService;
+import it.uniroma3.authtest.services.FotografoService;
 
 import java.net.URI;
 import java.util.Map;
@@ -43,6 +45,13 @@ public class MainController {
 	private static final String FILENAME = "{filename:.+}";
 	
 	private FotografiaService service;
+	
+	@Autowired
+	private FotografoService fotografoService;
+	
+	
+	@Autowired
+	private AlbumService albumService;
 	
 	@Autowired
     public MainController(FotografiaService service) {
@@ -93,6 +102,30 @@ public class MainController {
 		}
     	return "redirect:/admin.html";
     }
+    
+    
+    @RequestMapping(value = "/fotografo/{id}", method = RequestMethod.GET)
+   	public String getFotografo(@PathVariable ("id") Long id, Model model) {
+   		if(id!=null) {
+   			model.addAttribute("fotografo", this.fotografoService.fotografoPerId(id));
+   			return "fotografo.html";
+   		}else {
+   			model.addAttribute("fotografi", this.fotografoService.tutti());
+   			return "fotografo.html";
+   		}
+   	}
+       
+       
+       @RequestMapping(value = "/album/{idAlbum}", method = RequestMethod.GET)
+       public String getAlbum(@PathVariable ("idAlbum") Long id, Model model) {
+       	if(id!=null) {
+       		model.addAttribute("album", this.albumService.albumPerId(id));
+       		return "album.html";
+       	}else {
+       		model.addAttribute("albums", this.albumService.tutti());
+       		return "album.html";
+       	}
+       }
 
     /**
      * This method is called when a GET request is sent by the user to URL "/welcome".

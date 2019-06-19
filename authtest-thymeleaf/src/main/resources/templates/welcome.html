@@ -11,6 +11,18 @@
     <a href="/admin">Visit the admin page</a>
 </h3>
 
+<div>
+		<h4>Fotografi :</h4>
+		<ul>
+			<li th.each="fotografo : ${fotografi}"><a
+				th:href="@{'/fotografo' + '/'+ ${fotografo.id}}"
+				th:text="${fotografo.nomeFotografo} + ${fotografo.cognomeFotografo}"></a>
+			</li>
+
+
+		</ul>
+	</div>
+
 <h5><a href="/logout">Logout</a></h5>
 
 </body>
