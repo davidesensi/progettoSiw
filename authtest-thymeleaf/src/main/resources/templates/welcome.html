@@ -14,9 +14,9 @@
 <div>
 		<h4>Fotografi :</h4>
 		<ul>
-			<li th.each="fotografo : ${fotografi}"><a
+			<li th:each="fotografo : ${fotografi}"><a
 				th:href="@{'/fotografo' + '/'+ ${fotografo.id}}"
-				th:text="${fotografo.nomeFotografo} + ${fotografo.cognomeFotografo}"></a>
+				th:text="${fotografo.nome} + ${fotografo.cognome}"></a>
 			</li>
 
 

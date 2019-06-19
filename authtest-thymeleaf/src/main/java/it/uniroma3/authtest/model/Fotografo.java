@@ -30,6 +30,8 @@ public class Fotografo {
 	@OneToMany(mappedBy = "fotografo")
 	private List<Album> album;
 
+	public Fotografo() {}
+	
 	public Fotografo(String nome, String cognome) {
 		this.nome = nome;
 		this.cognome = cognome;
