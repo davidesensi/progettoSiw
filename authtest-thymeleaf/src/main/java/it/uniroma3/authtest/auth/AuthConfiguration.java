@@ -76,7 +76,11 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(this.buildDatasource())
                 .authoritiesByUsernameQuery("SELECT username, role FROM users WHERE username=?")
-                .usersByUsernameQuery("SELECT username, password, 1 as enabled FROM users WHERE username=?");
+                .usersByUsernameQuery("SELECT username, password, 1 as enabled FROM users WHERE username=?")
+                .and().inMemoryAuthentication()
+                .withUser("mariorossi").password(passwordEncoder().encode("mrpass")).roles("ADMIN")
+                .and()
+                .withUser("giuseppeverdi").password(passwordEncoder().encode("gvpass")).roles("GUEST");
     }
 
     @Bean
