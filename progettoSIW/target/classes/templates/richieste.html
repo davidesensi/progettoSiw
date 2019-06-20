@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+	<div>
+		<br />
+
+
+		<h2>Richieste utenti :</h2>
+
+
+
+		<table>
+			<thead>
+				<tr>
+					<th>Richiesta ID</th>
+					<th>Email Utente</th>
+					<th>Lista foto richieste</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="richiesta : ${richieste}">
+					<td th:text="${richiesta.id}">1</td>
+					<td th:text="${richiesta.email}">ennio.bagnate@gmail.com</td>
+					<td><a th:href="@{'/richiesta' + '/' + ${richiesta.id}}"><button>Lista foto</button></a></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>

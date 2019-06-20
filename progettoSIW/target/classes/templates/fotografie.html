@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+</head>
+
+<body>
+	<div>
+		<br />
+		<h2>Lista fotografie:</h2>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Titolo</th>
+					<th>Album</th>
+					<th>Fotografo</th>
+					<th>Visualizza Foto</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="foto: ${fotografie}">
+					<td th:text="${foto.titolo}">pippo inzaghi</td>
+					<td th:text="${foto.album.titolo}"></td>
+					<td
+						th:text="${foto.album.fotografo.nome} + ' ' + ${foto.album.fotografo.cognome}">pippo inzaghi
+						</td>
+					<td><a th:href="${foto.url}">
+							<button>Visualizza</button>
+					</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<title>HOME</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+	<div class="page-wrap">
+
+		<nav id="nav">
+			<ul>
+				<li><a href="/" class="active">Home</a></li>
+				<li><a href="gallery">Gallery</a></li>
+
+				<hr>
+
+				<li><a href="mostraCarrello">Carrello</a></li>
+
+				<li><a href="login">Login</a></li>
+
+
+			</ul>
+		</nav>
+
+		<section id="main">
+
+			<section id="banner">
+				<div class="inner">
+					<h1>Benvenuto in SILPH</h1>
+					<ul class="actions">
+						<li><a href="#galleries" class="button alt scrolly big">Continua</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="galleries">
+
+				<div class="gallery">
+					<header class="special">
+						<h2>Le ultime aggiunte:</h2>
+					</header>
+					<div class="content">
+						<div class="media" th:each="fotografia : ${fotografie}">
+							<a th:href="@{'/selezionaFoto' + '/' + ${fotografia.id}}"><img
+								style="width: 400px; height: 300px" th:src="${fotografia.url}"
+								alt="" /></a>
+						</div>
+
+					</div>
+					<footer>
+						<a href="gallery" class="button big">Galleria</a>
+					</footer>
+				</div>
+			</section>
+		</section>
+	</div>
+
+	<!-- Scripts -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/jquery.scrolly.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+</head>
+
+<body>
+	<div>
+		<br />
+		<h2>Lista album:</h2>
+
+
+		<table>
+			<thead>
+				<tr>
+					<th>Titolo</th>
+					<th>Fotografo</th>
+					<th>Fotografie</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="album : ${albums}">
+					<td th:text="${album.titolo}">Titolo</td>
+					<td
+						th:text="${album.fotografo.nome} + ' ' +${album.fotografo.cognome}">Marco
+						Verdi</td>
+					<td><a th:href="@{'/ricercaFotografie' + '/' + ${album.id}}"><button>Fotografie</button></a></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+
+	</div>
+</body>
+</html>

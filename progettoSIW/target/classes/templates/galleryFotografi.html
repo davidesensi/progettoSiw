@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<title>Fotografi</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+	<div class="page-wrap">
+
+		<nav id="nav">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="gallery" class="active">Gallery</a></li>
+				<hr>
+				<li><a href="mostraCarrello">Carrello</a></li>
+
+			</ul>
+		</nav>
+
+		<section id="main">
+
+			<header id="header">
+				<div>
+					Fotografi <span>by SILPH</span>
+				</div>
+			</header>
+
+			<section id="galleries">
+
+				<div class="gallery">
+
+					<header>
+						<h1>Fotografi</h1>
+
+						<a href="gallery"><button>Foto</button></a> <a href="galleryAlbum"><button>Album</button></a>
+					</header>
+
+					<div class="content">
+
+
+						<div class="card" th:each="fotografo : ${fotografi}">
+							<img
+								src="https://media.clickblog.it/f/fot/fotografo_01.jpg"
+								style="width: 30%">
+							<div class="contenitore">
+								<br />
+								<h4 th:text="${fotografo.nome}+' '+${fotografo.cognome}">Nome
+									Cognome</h4>
+								<a th:href="@{'/galleryAlbum' + '/' + ${fotografo.id}}">Visualizza
+									i suoi album</a>
+							</div>
+						</div>
+
+
+					</div>
+			</section>
+		</section>
+	</div>
+
+	<!-- Scripts -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/jquery.scrolly.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/main.js"></script>
+
+</body>
+</html>

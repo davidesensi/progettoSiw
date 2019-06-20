@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Quicksand:100,300,500">
+<title>Admin Form</title>
+</head>
+
+<body>
+	<div class="full-screen-containerAdmin">
+		<div class="login-container">
+			<h3 class="login-title">Vuoi accedere come Admin?</h3>
+			
+			<span style="color:white" th:text="${frase}"></span>
+			
+			<form th:action="@{/admin}" method="POST" th:object="${admin}">
+				
+				<div class="input-group">
+					<label>Username</label> <input type="text" th:field="*{username}" /> <span style="color:red"
+						th:if="${#fields.hasErrors('username')}" th:errors="*{username}">error</span>
+				</div>
+
+				       <div class="input-group">
+					<label>Password</label> <input type="password" th:field="*{psw}" /> <span style="color:red"
+						th:if="${#fields.hasErrors('psw')}" th:errors="*{psw}">error</span>
+				</div>
+				
+				
+				<button type="submit" class="login-button">Login</button>
+				
+		</form>
+	</div>
+	</div>
+</body>
+
+</html>

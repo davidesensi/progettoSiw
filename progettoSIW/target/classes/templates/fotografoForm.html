@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Quicksand:100,300,500">
+<title>Fotografo Form</title>
+</head>
+
+<body>
+	<div class="full-screen-containerFotografo">
+		<div class="login-container">
+			<h3 class="login-title">Inserimento nuovo fotografo</h3>
+			<form th:action="@{/fotografo}" method="POST"
+				th:object="${fotografo}">
+				<div class="input-group">
+					<label>Nome</label> <input type="text" th:field="*{nome}" /> <span
+						style="color: red" th:if="${#fields.hasErrors('nome')}"
+						th:errors="*{nome}">error</span>
+				</div>
+				<div class="input-group">
+					<label>Cognome</label> <input type="text" th:field="*{cognome}" />
+					<span style="color: red" th:if="${#fields.hasErrors('cognome')}"
+						th:errors="*{cognome}">error</span>
+				</div>
+				<button type="submit" class="login-button">Invio</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
