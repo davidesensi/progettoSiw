@@ -1,0 +1,21 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\it",
+    "\\src\\main\\java\\it\\uniroma3",
+    "\\src\\main\\java\\it\\uniroma3\\siw",
+    "\\src\\main\\java\\it\\uniroma3\\siw\\progettoSIW",
+    "\\src\\main\\java\\it\\uniroma3\\siw\\progettoSIW\\controller",
+    "\\src\\main\\java\\it\\uniroma3\\siw\\progettoSIW\\model",
+    "\\src\\main\\java\\it\\uniroma3\\siw\\progettoSIW\\repository",
+    "\\src\\main\\java\\it\\uniroma3\\siw\\progettoSIW\\services",
+    "\\src\\main\\resources",
+    "\\src\\main\\resources\\messages",
+    "\\src\\main\\resources\\templates"
+  ],
+  "SelectedNode": "\\src\\main\\java\\it\\uniroma3\\siw\\progettoSIW\\controller\\FotografoController.java",
+  "PreviewInSolutionExplorer": false
+}

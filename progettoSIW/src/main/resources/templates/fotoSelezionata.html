@@ -1,0 +1,37 @@
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Foto</title>
+</head>
+
+<body>
+	<div class="card">
+		<div class="image">
+			<img th:src="${fotografia.url}" />
+		</div>
+		<div class="details">
+			<div class="center">
+				<h1 th:text="${fotografia.titolo}">titolo foto</h1>
+				<br> <b></b><span
+					th:text="${fotografia.album.fotografo.nome} + ' ' + ${fotografia.album.fotografo.cognome}">fotografo</span></b><br>
+				<br>
+				<p
+					th:text="'Questa foto appartiene ad un album intitolato'+ ' : '+ ${fotografia.album.titolo}">album</p>
+				<ul>
+					</br>
+					<li><a th:if="${prenotato}"
+						th:href="@{'/deleteFotoRichiesta' + '/' + ${fotografia.id}}"><i
+							class="fa fa-trash" aria-hidden="true"></i></a> <a
+						th:unless="${prenotato}"
+						th:href="@{'/addFotoRichiesta' + '/' + ${fotografia.id}}"><i
+							class="fa fa-shopping-cart" aria-hidden="true"></i>Seleziona</a></li>
+
+					<li><a th:href="${fotografia.url}"><i class="fa fa-search"
+							aria-hidden="true"></i>Foto</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

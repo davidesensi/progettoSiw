@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Quicksand:100,300,500">
+<title>Foto Form</title>
+</head>
+
+<body>
+	<div class="full-screen-containerFoto">
+		<div class="login-container">
+			<h3 class="login-title">Inserimento nuova Fotografia</h3>
+			
+			<form th:action="@{/foto}" method="POST" th:object="${fotoForm}">
+				
+				<div class="input-group">
+					<label>Titolo</label> <input type="text" th:field="*{titolo}" /> <span style="color:white"
+						th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}">error</span>
+				</div>
+				
+				<div class="input-group">
+					<label>Url immagine</label> <input type="text" th:field="*{url}" /> <span style="color:white"
+						th:if="${#fields.hasErrors('url')}" th:errors="*{url}">error</span>
+				</div>
+
+				        <div class="input-group">
+				          <label>Album</label>
+							<select th:field="*{albumId}">
+				<option value="">Seleziona Album</option>
+				<option th:each="album : ${albums}" th:value="${album.id}" th:text="${album.titolo}+ '    di '+
+				${album.fotografo.nome}+' '+${album.fotografo.cognome}"></option>
+				</select> 
+				<span style="color:white"
+						th:if="${#fields.hasErrors('albumId')}" th:errors="*{albumId}">error</span> 
+						</div>
+				
+				
+				<button type="submit" class="login-button">Conferma</button>
+				
+		</form>
+	</div>
+	</div>
+</body>
+
+</html>

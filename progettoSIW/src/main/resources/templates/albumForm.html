@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+<title>Album Form</title>
+</head>
+
+<body>
+	<div class="full-screen-containerAlbum">
+		<div class="login-container">
+			<h3 class="login-title">Inserimento nuovo Album</h3>
+
+			<form th:action="@{/album}" method="POST" th:object="${albumForm}">
+
+				<div class="input-group">
+					<label>Titolo</label> <input type="text" th:field="*{titolo}" /> <span
+						style="color: white" th:if="${#fields.hasErrors('titolo')}"
+						th:errors="*{titolo}">error</span>
+				</div>
+
+				<div class="input-group">
+					<label>Fotografo</label> <select th:field="*{fotografoId}">
+						<option value="">Seleziona Fotografo</option>
+						<option th:each="fotografo : ${fotografi}"
+							th:value="${fotografo.id}"
+							th:text="${fotografo.nome} + ' '+${fotografo.cognome}"></option>
+					</select> <span style="color: white"
+						th:if="${#fields.hasErrors('fotografoId')}"
+						th:errors="*{fotografoId}">error</span>
+				</div>
+
+
+				<button type="submit" class="login-button">Conferma</button>
+
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

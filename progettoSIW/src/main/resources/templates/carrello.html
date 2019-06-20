@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+	<title>Carrello</title>
+</head>
+
+<body>
+	<div>
+		<br />
+		<h1>Carrello</h1>
+
+
+		<table>
+			<thead>
+				<tr>
+					<th>Foto ID</th>
+					<th>Titolo</th>
+					<th>Elimina</th>
+					<th>Vedi</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="fotografia : ${fotografie}">
+					<td th:text="${fotografia.id}">1</td>
+					<td th:text="${fotografia.titolo}">titolo foto</td>
+					<td><a
+						th:href="@{'/deleteFotoRichiesta' + '/' + ${fotografia.id}}"><button>Rimuovi</button></a></td>
+					<td><a th:href="${fotografia.url}"><button>Visualizza</button></a></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+
+		<br /> <a href="svuotaCarrello"><button
+				style="position: absolute; left: 40px; width: 100px; height: 28px; background-color: tomato">Svuota</button></a>
+		<a href="gallery"><button
+				style="position: absolute; left: 200px; width: 140px; height: 28px; background-color: SkyBlue">Seleziona
+				altre foto</button></a> <br /> <br /> <br /> <br /> <a href="inoltraRichiesta"><button
+				style="position: absolute; left: 400px; width: 120px; height: 35px; background-color: green; font-size: 25px; color: white">Inoltra</button></a>
+	</div>
+</body>
+</html>

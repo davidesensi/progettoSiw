@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>Fotografi</title>
+</head>
+
+<body>
+
+
+	<br />
+	<h2>Lista fotografi:</h2>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Cognome</th>
+				<th>Album</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr th:each="fotografo : ${fotografi}">
+				<td th:text="${fotografo.nome}">Marco</td>
+				<td th:text="${fotografo.cognome}">Verdi</td>
+				<td><a th:href="@{'/ricercaAlbum' + '/' + ${fotografo.id}}"><button>Album</button></a></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:100,300,500">
+  <title>Richiesta Form</title>
+</head>
+
+<body>
+  <div class="full-screen-containerRichiesta">
+    <div class="login-container">
+      <h3 class="login-title">Inoltro richiesta</h3>
+      <form th:action="@{/richiesta}" method="POST" th:object="${richiesta}">
+        <div class="input-group">
+          <label>Inserisci la tua email</label>
+        <input type="text" th:field="*{email}" />
+				<span style="color:white" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error</span>
+        </div>
+       
+        <button type="submit" class="login-button">Conferma</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

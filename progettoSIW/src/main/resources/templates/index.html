@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<title>HOME</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+	<div class="page-wrap">
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="/" class="active">Home</a></li>
+				<li><a href="gallery">Gallery</a></li>
+
+				<li><a href="mostraCarrello">Il tuo carrello</a></li>
+
+				<li><a href="login">Login</a></li>
+
+
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<section id="main">
+
+			<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1>Hey, Io sono SILPH</h1>
+					<p>e ho sicuramente la foto che stai cercando.</p>
+					<ul class="actions">
+						<li><a href="#galleries" class="button alt scrolly big">Continua</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Gallery -->
+			<section id="galleries">
+
+				<!-- Photo Galleries -->
+				<div class="gallery">
+					<header class="special">
+						<h2>Le novità</h2>
+					</header>
+					<div class="content">
+						<div class="media" th:each="fotografia : ${fotografie}">
+							<a th:href="@{'/selezionaFoto' + '/' + ${fotografia.id}}"><img
+								style="width: 400px; height: 300px" th:src="${fotografia.url}"
+								alt="" /></a>
+						</div>
+
+					</div>
+					<footer>
+						<a href="gallery" class="button big">Visita la galleria</a>
+					</footer>
+				</div>
+			</section>
+			
+		</section>
+
+			
+				
+
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.poptrox.min.js"></script>
+	<script src="/js/jquery.scrolly.min.js"></script>
+	<script src="/js/skel.min.js"></script>
+	<script src="/js/util.js"></script>
+	<script src="/js/main.js"></script>
+
+</body>
+</html>
