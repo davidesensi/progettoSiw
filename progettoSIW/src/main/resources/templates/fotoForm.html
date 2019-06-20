@@ -16,12 +16,12 @@
 			<form th:action="@{/foto}" method="POST" th:object="${fotoForm}">
 				
 				<div class="input-group">
-					<label>Titolo</label> <input type="text" th:field="*{titolo}" /> <span style="color:white"
+					<label>Titolo</label> <input type="text" th:field="*{titolo}" /> <span style="color:red"
 						th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}">error</span>
 				</div>
 				
 				<div class="input-group">
-					<label>Url immagine</label> <input type="text" th:field="*{url}" /> <span style="color:white"
+					<label>Url immagine</label> <input type="text" th:field="*{url}" /> <span style="color:red"
 						th:if="${#fields.hasErrors('url')}" th:errors="*{url}">error</span>
 				</div>
 
@@ -32,7 +32,7 @@
 				<option th:each="album : ${albums}" th:value="${album.id}" th:text="${album.titolo}+ '    di '+
 				${album.fotografo.nome}+' '+${album.fotografo.cognome}"></option>
 				</select> 
-				<span style="color:white"
+				<span style="color:red"
 						th:if="${#fields.hasErrors('albumId')}" th:errors="*{albumId}">error</span> 
 						</div>
 				

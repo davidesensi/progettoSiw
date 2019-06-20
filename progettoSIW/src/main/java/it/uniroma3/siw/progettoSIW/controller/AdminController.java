@@ -153,7 +153,7 @@ public class AdminController {
 	} 
 
 
-	//Id dell'album
+
 	@RequestMapping(value= "/ricercaFotografie/{id}", method = RequestMethod.GET)
 	public String ricercaFotos(@PathVariable ("id") Long id, Model model) {
 		if(id!=null) {
@@ -167,7 +167,7 @@ public class AdminController {
 	}
 
 	
-	//Id del fotografo
+
 	@RequestMapping(value=  "/ricercaAlbum/{id}", method = RequestMethod.GET)
 	public String ricercaAlbums(@PathVariable ("id") Long id, Model model) {
 		if(id!=null) {

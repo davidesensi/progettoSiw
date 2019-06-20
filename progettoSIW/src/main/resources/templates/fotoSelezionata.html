@@ -20,13 +20,13 @@
 					</br>
 					<li><a th:if="${prenotato}"
 						th:href="@{'/deleteFotoRichiesta' + '/' + ${fotografia.id}}"><i
-							class="fa fa-trash" aria-hidden="true"></i></a> <a
+							class="fa fa-trash" aria-hidden="true"></i>Rimuovi dal Carrello</a> <a
 						th:unless="${prenotato}"
 						th:href="@{'/addFotoRichiesta' + '/' + ${fotografia.id}}"><i
-							class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+							class="fa fa-shopping-cart" aria-hidden="true"></i>Inserisci nel Carrello</a></li>
 
 					<li><a th:href="${fotografia.url}"><i class="fa fa-search"
-							aria-hidden="true"></i></a></li>
+							aria-hidden="true"></i>Link Foto</a></li>
 
 				</ul>
 			</div>

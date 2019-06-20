@@ -17,8 +17,6 @@ public class RichiestaValidator implements Validator{
 	@Override
 	public void validate(Object o, Errors error) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(error, "email", "required");
-
-
 	}
 
 }

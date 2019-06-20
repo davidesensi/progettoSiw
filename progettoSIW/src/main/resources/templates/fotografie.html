@@ -21,11 +21,11 @@
 			</thead>
 			<tbody>
 				<tr th:each="foto: ${fotografie}">
-					<td th:text="${foto.titolo}">marco verdi</td>
+					<td th:text="${foto.titolo}">pippo inzaghi</td>
 					<td th:text="${foto.album.titolo}"></td>
 					<td
-						th:text="${foto.album.fotografo.nome} + ' ' + ${foto.album.fotografo.cognome}">marco
-						verdi</td>
+						th:text="${foto.album.fotografo.nome} + ' ' + ${foto.album.fotografo.cognome}">pippo inzaghi
+						</td>
 					<td><a th:href="${foto.url}">
 							<button>Visualizza</button>
 					</a></td>

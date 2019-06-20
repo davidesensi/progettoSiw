@@ -19,8 +19,7 @@ public class Album {
 	
 	@ManyToOne
 	private Fotografo fotografo;
-	
-	//Costruttori
+
 	public Album (String titolo, Fotografo f) {
 		this.titolo=titolo;
 		this.fotografo=f;
@@ -33,7 +32,6 @@ public class Album {
 	
 	
 	
-	// Getters & Setters
 	public String getTitolo() {
 		return titolo;
 	}

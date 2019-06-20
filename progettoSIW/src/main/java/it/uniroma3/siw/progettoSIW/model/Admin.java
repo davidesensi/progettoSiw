@@ -21,7 +21,7 @@ public Admin() {
 	
 }
 	
-	// Getters & Setters
+
 	public String getUsername() {
 		return username;
 	}

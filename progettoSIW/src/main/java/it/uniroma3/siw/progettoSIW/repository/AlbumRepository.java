@@ -6,7 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import it.uniroma3.siw.progettoSIW.model.Album;
 
-
 public interface AlbumRepository extends CrudRepository<Album, Long>{
 	
 	public List<Album> findByTitolo(String titolo);

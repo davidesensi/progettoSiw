@@ -21,8 +21,8 @@
 		<tbody>
 
 			<tr th:each="fotografo : ${fotografi}">
-				<td th:text="${fotografo.nome}">Marco</td>
-				<td th:text="${fotografo.cognome}">Verdi</td>
+				<td th:text="${fotografo.nome}">Pippo</td>
+				<td th:text="${fotografo.cognome}">Inzaghi</td>
 				<td><a th:href="@{'/ricercaAlbum' + '/' + ${fotografo.id}}"><button>Album</button></a></td>
 			</tr>
 

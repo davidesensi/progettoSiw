@@ -16,12 +16,12 @@
 				th:object="${fotografo}">
 				<div class="input-group">
 					<label>Nome</label> <input type="text" th:field="*{nome}" /> <span
-						style="color: white" th:if="${#fields.hasErrors('nome')}"
+						style="color: red" th:if="${#fields.hasErrors('nome')}"
 						th:errors="*{nome}">error</span>
 				</div>
 				<div class="input-group">
 					<label>Cognome</label> <input type="text" th:field="*{cognome}" />
-					<span style="color: white" th:if="${#fields.hasErrors('cognome')}"
+					<span style="color: red" th:if="${#fields.hasErrors('cognome')}"
 						th:errors="*{cognome}">error</span>
 				</div>
 				<button type="submit" class="login-button">Invio</button>

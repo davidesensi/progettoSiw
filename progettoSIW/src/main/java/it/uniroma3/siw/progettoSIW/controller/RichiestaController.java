@@ -59,7 +59,7 @@ public class RichiestaController {
 
 
 
-	// AGGIUNGO FOTO AL CARRELLO
+
 	@RequestMapping(value = "/addFotoRichiesta/{id}", method = RequestMethod.GET)
 	public String addFotoRichiesta(@PathVariable("id") Long id, Model model) {
 		if(id==null) {
@@ -83,7 +83,6 @@ public class RichiestaController {
 		}
 	}
 
-	// ELIMINO FOTO DAL CARRELLO
 	@RequestMapping(value = "/deleteFotoRichiesta/{id}", method = RequestMethod.GET)
 	public String deleteFotoRichiesta(@PathVariable("id") Long id, Model model) {
 		if(id==null) {

@@ -19,7 +19,6 @@ public class Foto {
 	private String url;
 	
 
-//Costruttori	
 public Foto (String titolo, Album album, String url) {
 	this.dataCreazione= LocalDateTime.now();
 	this.titolo=titolo;
@@ -32,7 +31,7 @@ public Foto () {
 }
 
 
-// Getters & Setters
+
 public String getTitolo() {
 	return titolo;
 }

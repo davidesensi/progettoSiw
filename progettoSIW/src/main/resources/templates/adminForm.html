@@ -18,12 +18,12 @@
 			<form th:action="@{/admin}" method="POST" th:object="${admin}">
 				
 				<div class="input-group">
-					<label>Username</label> <input type="text" th:field="*{username}" /> <span style="color:white"
+					<label>Username</label> <input type="text" th:field="*{username}" /> <span style="color:red"
 						th:if="${#fields.hasErrors('username')}" th:errors="*{username}">error</span>
 				</div>
 
 				       <div class="input-group">
-					<label>Password</label> <input type="password" th:field="*{psw}" /> <span style="color:white"
+					<label>Password</label> <input type="password" th:field="*{psw}" /> <span style="color:red"
 						th:if="${#fields.hasErrors('psw')}" th:errors="*{psw}">error</span>
 				</div>
 				

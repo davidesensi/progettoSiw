@@ -17,7 +17,7 @@ public class Fotografo {
 	@OneToMany (mappedBy = "fotografo") 
 	private List<Album> album;
 
-	//Costruttori
+
 	public Fotografo(String nome,String cognome) {
 		this.nome=nome;
 		this.cognome=cognome;
@@ -28,7 +28,6 @@ public class Fotografo {
 		
 	}
 
-	//Getters & Setters
 	public String getNome() {
 		return nome;
 	}

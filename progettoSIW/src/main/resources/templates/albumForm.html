@@ -17,7 +17,7 @@
 
 				<div class="input-group">
 					<label>Titolo</label> <input type="text" th:field="*{titolo}" /> <span
-						style="color: white" th:if="${#fields.hasErrors('titolo')}"
+						style="color: red" th:if="${#fields.hasErrors('titolo')}"
 						th:errors="*{titolo}">error</span>
 				</div>
 
@@ -27,7 +27,7 @@
 						<option th:each="fotografo : ${fotografi}"
 							th:value="${fotografo.id}"
 							th:text="${fotografo.nome} + ' '+${fotografo.cognome}"></option>
-					</select> <span style="color: white"
+					</select> <span style="color: red"
 						th:if="${#fields.hasErrors('fotografoId')}"
 						th:errors="*{fotografoId}">error</span>
 				</div>
